@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body{
+    /*+background-color: black;*/
+    color: aqua;
+    
+}
+#container{
+    background-color: violet;
+    height: auto;
+    width: auto;
+    color: brown;
+    text-align: center;
+    border: 5px solid brown;
+    border-radius: 5%;
+}
+#click{
+    margin: 20px;
+    background-color: brown;
+}
+button {
+    background-color: brown;
+    color: violet;
+    border: 2px solid violet;
+    width: 100px;
+    height: 3em;
+    margin-top: 4em;
+}
+    </style>
+    <title>Guessing Game</title>
+</head>
+<body>
+    <div id="container">
+        <div id="fonts">
+            <div id="align"><h1>Number Guessing Game</h1>
+        <hr>
+        <p>Attempts:
+            <text id="attempts">0</text></p>
+        <input type="text" maxlength="1" size="1" id="number101">
+        <br>
+            <div id="retake">
+                <br>
+                <button class="brown" onclick="run101()">Submit</button>
+            </div>
+            <br><br>
+            <p id="answer"></p>
+            <p id="message"></p>
+            </div>
+         </div>
+    </div>
+        
+    <script>
+        var s = 0;
+
+var t;
+var u = 0;
+u++;
+
+var shuffle101 = Math.floor(Math.random() * 3);
+message.innerHTML  = shuffle101;
+
+function run101() {
+    var b = number101.value;
+    attempts.innerHTML = u++;
+    if (b == shuffle101) {
+        s = 1;
+    }
+    else {
+        s = 0;
+    }
+    var t = s;
+    if (t ==  0) {
+        answer.innerHTML = "Your input is incorrect. ";
+    }
+    if (t == 1) {
+        answer.innerHTML = "Congratulations! Your answer is Correct. You got it right after " + (u - 1) + " attempts.";
+        retake.innerHTML = "<button class=brown onclick=next101()>Next</button>"
+    }
+}
+function next101() {
+    location.reload();
+}
+    </script>
+</body>
+</html>
